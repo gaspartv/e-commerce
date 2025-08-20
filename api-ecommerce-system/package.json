@@ -7,7 +7,7 @@
   "license": "ISC",
   "description": "",
   "scripts": {
-    "start:dev": "ts-node-dev --respawn --transpile-only src/app.ts",
+    "start:dev": "node scripts/run-migration.js && ts-node-dev --respawn --transpile-only src/app.ts",
     "build": "tsc",
     "start": "node dist/index.js",
     "migration:create": "node scripts/create-migration.js",

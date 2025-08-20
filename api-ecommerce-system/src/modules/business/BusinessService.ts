@@ -27,4 +27,21 @@ export class BusinessService {
 
     return business;
   }
+
+  async get() {
+    const businesses = await this.businessesRepository.get();
+    return {
+      page: 1,
+      size: 10,
+      total: businesses.length,
+      sort: "created_at",
+      order: "desc",
+      has_more: false,
+      prev_page: 1,
+      next_page: 1,
+      last_page: 1,
+      column: [],
+      data: businesses,
+    };
+  }
 }

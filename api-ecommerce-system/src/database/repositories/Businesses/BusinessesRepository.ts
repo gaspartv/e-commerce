@@ -32,4 +32,8 @@ export class BusinessesRepository {
       [dto.name, deletedAt, dto.disabled, dto.id]
     );
   }
+
+  get() {
+    return db.any("SELECT * FROM businesses WHERE deleted_at IS NULL");
+  }
 }

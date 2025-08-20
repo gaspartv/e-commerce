@@ -45,5 +45,12 @@ export class Routes {
       ValidationSchemaMiddleware.execute(Schema.businessUpdate()),
       this.businessController.update
     );
+
+    router.get(
+      "/business",
+      VerifyTokenMiddleware.execute,
+      // ValidationSchemaMiddleware.execute(Schema.businessUpdate()),
+      this.businessController.get
+    );
   }
 }

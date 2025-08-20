@@ -1,0 +1,3 @@
+interface BusinessesCreateDto {
+  name: string;
+}
